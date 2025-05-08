@@ -1,0 +1,105 @@
+/*  Glow animation for edited rows */
+@keyframes glowEdited {
+  from {
+    background-color: #e9dcff;
+    /* Light yellow */
+  }
+
+  to {
+    background-color: #4447eb;
+    /* Softer yellow */
+  }
+}
+
+.row-edited {
+  animation: glowEdited 0.6s ease-in-out;
+  background-color: #aec4f3 !important;
+}
+
+/* Subtle saved row green highlight */
+.row-saved {
+  animation: flash-green 1.5s ease-out;
+}
+
+@keyframes flash-green {
+  0% {
+    background-color: #d1fae5;
+    /* light green */
+  }
+
+  100% {
+    background-color: inherit;
+  }
+}
+
+tr {
+  transition: background-color 0.3s ease;
+}
+
+th {
+  user-select: none;
+}
+th span {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  color: #6b7280;
+}
+.unsaved-badge {
+  color: #870f6c;
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.filter-panel {
+  width: 1500px;
+  height: 70px;
+}
+table tbody tr {
+  transition: opacity 0.2s ease;
+  opacity: 1;
+}
+
+table.loading tbody tr {
+  opacity: 0.3;
+}
+.blur-when-loading {
+  filter: blur(1.5px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+tr:hover {
+  background-color: #f9fafb; /* light gray */
+  transition: background-color 0.2s ease-in-out;
+}
+@keyframes pulseCheckmark {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.checkmark-animate {
+  animation: pulseCheckmark 0.6s ease-out;
+}
